@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zw/应用篇之-Qt应用编程/项目代码及量化模型/demo/deploy/utils/file_utils.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+

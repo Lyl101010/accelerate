@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../3rdparty/libsndfile/include/sndfile.h
+stdio.h
+-
+stdint.h
+-
+sys/types.h
+-
+
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/deploy/utils/audio_utils.c
+stdio.h
+-
+stdlib.h
+-
+sndfile.h
+-
+math.h
+-
+audio_utils.h
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/deploy/utils/audio_utils.h
+
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/deploy/utils/audio_utils.h
+

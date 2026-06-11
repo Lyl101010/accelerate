@@ -1,0 +1,442 @@
+Build output check failed:
+    Regex: 'command line option .* is valid for .* but not for C\+\+'
+    Output line: 'cc1plus: warning: command line option ‘-Wmissing-prototypes’ is valid for C/ObjC but not for C++'
+Compilation failed:
+    source file: '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations  -Wmissing-prototypes'
+===== BUILD LOG =====
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_1c752/fast && /usr/bin/make -f CMakeFiles/cmTC_1c752.dir/build.make CMakeFiles/cmTC_1c752.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_1c752.dir/src.cxx.o
+/usr/bin/aarch64-linux-gnu-g++    -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations  -Wmissing-prototypes -o CMakeFiles/cmTC_1c752.dir/src.cxx.o -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: warning: command line option ‘-Wmissing-prototypes’ is valid for C/ObjC but not for C++
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring #pragma   [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking CXX executable cmTC_1c752
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c752.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-g++    -O3 -DNDEBUG    -rdynamic CMakeFiles/cmTC_1c752.dir/src.cxx.o  -o cmTC_1c752 
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command line option .* is valid for .* but not for C\+\+'
+    Output line: 'cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++'
+Compilation failed:
+    source file: '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations  -Wstrict-prototypes'
+===== BUILD LOG =====
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3de5c/fast && /usr/bin/make -f CMakeFiles/cmTC_3de5c.dir/build.make CMakeFiles/cmTC_3de5c.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_3de5c.dir/src.cxx.o
+/usr/bin/aarch64-linux-gnu-g++    -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations  -Wstrict-prototypes -o CMakeFiles/cmTC_3de5c.dir/src.cxx.o -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring #pragma   [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking CXX executable cmTC_3de5c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3de5c.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-g++    -O3 -DNDEBUG    -rdynamic CMakeFiles/cmTC_3de5c.dir/src.cxx.o  -o cmTC_3de5c 
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command line option .* is valid for .* but not for C'
+    Output line: 'cc1: warning: command line option ‘-Wsign-promo’ is valid for C++/ObjC++ but not for C'
+Compilation failed:
+    source file: '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow  -Wsign-promo'
+===== BUILD LOG =====
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_bf61f/fast && /usr/bin/make -f CMakeFiles/cmTC_bf61f.dir/build.make CMakeFiles/cmTC_bf61f.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_bf61f.dir/src.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow  -Wsign-promo -o CMakeFiles/cmTC_bf61f.dir/src.c.o   -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c
+cc1: warning: ‘-Werror=’ argument ‘-Werror=non-virtual-dtor’ is not valid for C
+cc1: warning: command line option ‘-Wsign-promo’ is valid for C++/ObjC++ but not for C
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring #pragma   [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking C executable cmTC_bf61f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bf61f.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-gcc   -O3 -DNDEBUG    -rdynamic CMakeFiles/cmTC_bf61f.dir/src.c.o  -o cmTC_bf61f 
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command line option .* is valid for .* but not for C'
+    Output line: 'cc1: warning: command line option ‘-Wsuggest-override’ is valid for C++/ObjC++ but not for C'
+Compilation failed:
+    source file: '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self  -Wsuggest-override'
+===== BUILD LOG =====
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7f095/fast && /usr/bin/make -f CMakeFiles/cmTC_7f095.dir/build.make CMakeFiles/cmTC_7f095.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_7f095.dir/src.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self  -Wsuggest-override -o CMakeFiles/cmTC_7f095.dir/src.c.o   -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c
+cc1: warning: ‘-Werror=’ argument ‘-Werror=non-virtual-dtor’ is not valid for C
+cc1: warning: command line option ‘-Wsuggest-override’ is valid for C++/ObjC++ but not for C
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring #pragma   [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking C executable cmTC_7f095
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7f095.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-gcc   -O3 -DNDEBUG    -rdynamic CMakeFiles/cmTC_7f095.dir/src.c.o  -o cmTC_7f095 
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command line option .* is valid for .* but not for C'
+    Output line: 'cc1: warning: command line option ‘-Wno-delete-non-virtual-dtor’ is valid for C++/ObjC++ but not for C'
+Compilation failed:
+    source file: '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing  -Wno-delete-non-virtual-dtor'
+===== BUILD LOG =====
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5f3b9/fast && /usr/bin/make -f CMakeFiles/cmTC_5f3b9.dir/build.make CMakeFiles/cmTC_5f3b9.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_5f3b9.dir/src.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing  -Wno-delete-non-virtual-dtor -o CMakeFiles/cmTC_5f3b9.dir/src.c.o   -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c
+cc1: warning: ‘-Werror=’ argument ‘-Werror=non-virtual-dtor’ is not valid for C
+cc1: warning: command line option ‘-Wno-delete-non-virtual-dtor’ is valid for C++/ObjC++ but not for C
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring #pragma   [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking C executable cmTC_5f3b9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f3b9.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-gcc   -O3 -DNDEBUG    -rdynamic CMakeFiles/cmTC_5f3b9.dir/src.c.o  -o cmTC_5f3b9 
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: warning: unrecognized command line option ‘-Wno-unnamed-type-template-args’'
+Compilation failed:
+    source file: '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winit-self -Wsuggest-override -Wno-narrowing -Wno-delete-non-virtual-dtor  -Wno-unnamed-type-template-args'
+===== BUILD LOG =====
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9894f/fast && /usr/bin/make -f CMakeFiles/cmTC_9894f.dir/build.make CMakeFiles/cmTC_9894f.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_9894f.dir/src.cxx.o
+/usr/bin/aarch64-linux-gnu-g++    -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winit-self -Wsuggest-override -Wno-narrowing -Wno-delete-non-virtual-dtor  -Wno-unnamed-type-template-args -o CMakeFiles/cmTC_9894f.dir/src.cxx.o -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring #pragma   [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: warning: unrecognized command line option ‘-Wno-unnamed-type-template-args’
+Linking CXX executable cmTC_9894f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9894f.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-g++    -O3 -DNDEBUG    -rdynamic CMakeFiles/cmTC_9894f.dir/src.cxx.o  -o cmTC_9894f 
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1: warning: unrecognized command line option ‘-Wno-unnamed-type-template-args’'
+Compilation failed:
+    source file: '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing  -Wno-unnamed-type-template-args'
+===== BUILD LOG =====
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_d713b/fast && /usr/bin/make -f CMakeFiles/cmTC_d713b.dir/build.make CMakeFiles/cmTC_d713b.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_d713b.dir/src.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing  -Wno-unnamed-type-template-args -o CMakeFiles/cmTC_d713b.dir/src.c.o   -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c
+cc1: warning: ‘-Werror=’ argument ‘-Werror=non-virtual-dtor’ is not valid for C
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring #pragma   [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1: warning: unrecognized command line option ‘-Wno-unnamed-type-template-args’
+Linking C executable cmTC_d713b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d713b.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-gcc   -O3 -DNDEBUG    -rdynamic CMakeFiles/cmTC_d713b.dir/src.c.o  -o cmTC_d713b 
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'command line option .* is valid for .* but not for C'
+    Output line: 'cc1: warning: command line option ‘-fvisibility-inlines-hidden’ is valid for C++/ObjC++ but not for C'
+Compilation failed:
+    source file: '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden  -fvisibility-inlines-hidden'
+===== BUILD LOG =====
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5e96c/fast && /usr/bin/make -f CMakeFiles/cmTC_5e96c.dir/build.make CMakeFiles/cmTC_5e96c.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_5e96c.dir/src.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -O3 -DNDEBUG -fPIE    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden  -fvisibility-inlines-hidden -o CMakeFiles/cmTC_5e96c.dir/src.c.o   -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c
+cc1: warning: ‘-Werror=’ argument ‘-Werror=non-virtual-dtor’ is not valid for C
+cc1: warning: command line option ‘-fvisibility-inlines-hidden’ is valid for C++/ObjC++ but not for C
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring #pragma   [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking C executable cmTC_5e96c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5e96c.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-gcc   -O3 -DNDEBUG    -rdynamic CMakeFiles/cmTC_5e96c.dir/src.c.o  -o cmTC_5e96c 
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1: warning: unrecognized command line option ‘-Wno-shorten-64-to-32’'
+Compilation failed:
+    source file: '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c'
+    check option: ' -Wno-shorten-64-to-32'
+===== BUILD LOG =====
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_42bad/fast && /usr/bin/make -f CMakeFiles/cmTC_42bad.dir/build.make CMakeFiles/cmTC_42bad.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_42bad.dir/src.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -Wno-unused-parameter -Wno-sign-compare  -O3 -DNDEBUG -fPIE    -Wno-shorten-64-to-32 -o CMakeFiles/cmTC_42bad.dir/src.c.o   -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c
+cc1: warning: ‘-Werror=’ argument ‘-Werror=non-virtual-dtor’ is not valid for C
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c:1: warning: ignoring #pragma   [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1: warning: unrecognized command line option ‘-Wno-shorten-64-to-32’
+Linking C executable cmTC_42bad
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42bad.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-gcc    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -Wno-unused-parameter -Wno-sign-compare  -O3 -DNDEBUG    -Wl,--gc-sections  -rdynamic CMakeFiles/cmTC_42bad.dir/src.c.o  -o cmTC_42bad 
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+
+
+===== END =====
+
+Determining if the include file linux/videodev.h exists failed with the following output:
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3aec6/fast && /usr/bin/make -f CMakeFiles/cmTC_3aec6.dir/build.make CMakeFiles/cmTC_3aec6.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_3aec6.dir/CheckIncludeFile.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden  -O3 -DNDEBUG -fPIE   -o CMakeFiles/cmTC_3aec6.dir/CheckIncludeFile.c.o   -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+cc1: warning: ‘-Werror=’ argument ‘-Werror=non-virtual-dtor’ is not valid for C
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: linux/videodev.h: 没有那个文件或目录
+    1 | #include <linux/videodev.h>
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_3aec6.dir/build.make:66：CMakeFiles/cmTC_3aec6.dir/CheckIncludeFile.c.o] 错误 1
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_3aec6/fast] 错误 2
+
+
+
+Determining if the include file sys/videoio.h exists failed with the following output:
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_b77aa/fast && /usr/bin/make -f CMakeFiles/cmTC_b77aa.dir/build.make CMakeFiles/cmTC_b77aa.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_b77aa.dir/CheckIncludeFile.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden  -O3 -DNDEBUG -fPIE   -o CMakeFiles/cmTC_b77aa.dir/CheckIncludeFile.c.o   -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+cc1: warning: ‘-Werror=’ argument ‘-Werror=non-virtual-dtor’ is not valid for C
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: sys/videoio.h: 没有那个文件或目录
+    1 | #include <sys/videoio.h>
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTC_b77aa.dir/build.make:66：CMakeFiles/cmTC_b77aa.dir/CheckIncludeFile.c.o] 错误 1
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_b77aa/fast] 错误 2
+
+
+
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_aac32/fast && /usr/bin/make -f CMakeFiles/cmTC_aac32.dir/build.make CMakeFiles/cmTC_aac32.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_aac32.dir/CheckFunctionExists.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -DCHECK_FUNCTION_EXISTS=sgemm_ -O3 -DNDEBUG -fPIE   -o CMakeFiles/cmTC_aac32.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+cc1: warning: ‘-Werror=’ argument ‘-Werror=non-virtual-dtor’ is not valid for C
+Linking C executable cmTC_aac32
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aac32.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-gcc    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -DCHECK_FUNCTION_EXISTS=sgemm_ -O3 -DNDEBUG    -Wl,--gc-sections  -rdynamic CMakeFiles/cmTC_aac32.dir/CheckFunctionExists.c.o  -o cmTC_aac32 
+/usr/lib/gcc-cross/aarch64-linux-gnu/9/../../../../aarch64-linux-gnu/bin/ld: CMakeFiles/cmTC_aac32.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text.startup.main+0x10): undefined reference to `sgemm_'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_aac32.dir/build.make:87：cmTC_aac32] 错误 1
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+make: *** [Makefile:121：cmTC_aac32/fast] 错误 2
+
+
+
+Build output check failed:
+    Regex: 'command line option .* is valid for .* but not for C\+\+'
+    Output line: 'cc1plus: warning: command line option ‘-Wno-missing-prototypes’ is valid for C/ObjC but not for C++'
+Compilation failed:
+    source file: '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-missing-prototypes'
+===== BUILD LOG =====
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_94af3/fast && /usr/bin/make -f CMakeFiles/cmTC_94af3.dir/build.make CMakeFiles/cmTC_94af3.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_94af3.dir/src.cxx.o
+/usr/bin/aarch64-linux-gnu-g++    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winit-self -Wsuggest-override -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated  -O3 -DNDEBUG -fPIE    -Wno-missing-prototypes -o CMakeFiles/cmTC_94af3.dir/src.cxx.o -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: warning: command line option ‘-Wno-missing-prototypes’ is valid for C/ObjC but not for C++
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring #pragma   [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+Linking CXX executable cmTC_94af3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_94af3.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-g++     -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winit-self -Wsuggest-override -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated  -O3 -DNDEBUG    -Wl,--gc-sections  -rdynamic CMakeFiles/cmTC_94af3.dir/src.cxx.o  -o cmTC_94af3 
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: warning: unrecognized command line option ‘-Wno-tautological-undefined-compare’'
+Compilation failed:
+    source file: '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-tautological-undefined-compare'
+===== BUILD LOG =====
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_c3af5/fast && /usr/bin/make -f CMakeFiles/cmTC_c3af5.dir/build.make CMakeFiles/cmTC_c3af5.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_c3af5.dir/src.cxx.o
+/usr/bin/aarch64-linux-gnu-g++    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Winit-self -Wpointer-arith -Wuninitialized -Winit-self -Wsuggest-override -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef  -O3 -DNDEBUG -fPIE    -Wno-tautological-undefined-compare -o CMakeFiles/cmTC_c3af5.dir/src.cxx.o -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring #pragma   [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: warning: unrecognized command line option ‘-Wno-tautological-undefined-compare’
+Linking CXX executable cmTC_c3af5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3af5.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-g++     -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Winit-self -Wpointer-arith -Wuninitialized -Winit-self -Wsuggest-override -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef  -O3 -DNDEBUG    -Wl,--gc-sections  -rdynamic CMakeFiles/cmTC_c3af5.dir/src.cxx.o  -o cmTC_c3af5 
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: warning: unrecognized command line option ‘-Wno-shorten-64-to-32’'
+Compilation failed:
+    source file: '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-shorten-64-to-32'
+===== BUILD LOG =====
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8200d/fast && /usr/bin/make -f CMakeFiles/cmTC_8200d.dir/build.make CMakeFiles/cmTC_8200d.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_8200d.dir/src.cxx.o
+/usr/bin/aarch64-linux-gnu-g++    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Winit-self -Wpointer-arith -Wuninitialized -Winit-self -Wsuggest-override -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable  -O3 -DNDEBUG -fPIE    -Wno-shorten-64-to-32 -o CMakeFiles/cmTC_8200d.dir/src.cxx.o -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring #pragma   [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: warning: unrecognized command line option ‘-Wno-shorten-64-to-32’
+Linking CXX executable cmTC_8200d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8200d.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-g++     -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Winit-self -Wpointer-arith -Wuninitialized -Winit-self -Wsuggest-override -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable  -O3 -DNDEBUG    -Wl,--gc-sections  -rdynamic CMakeFiles/cmTC_8200d.dir/src.cxx.o  -o cmTC_8200d 
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: warning: unrecognized command line option ‘-Wno-enum-compare-switch’'
+Compilation failed:
+    source file: '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-enum-compare-switch'
+===== BUILD LOG =====
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_193ab/fast && /usr/bin/make -f CMakeFiles/cmTC_193ab.dir/build.make CMakeFiles/cmTC_193ab.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_193ab.dir/src.cxx.o
+/usr/bin/aarch64-linux-gnu-g++    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Winit-self -Wpointer-arith -Wuninitialized -Winit-self -Wsuggest-override -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable -Wno-invalid-offsetof  -O3 -DNDEBUG -fPIE    -Wno-enum-compare-switch -o CMakeFiles/cmTC_193ab.dir/src.cxx.o -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring #pragma   [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: warning: unrecognized command line option ‘-Wno-enum-compare-switch’
+Linking CXX executable cmTC_193ab
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_193ab.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-g++     -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Winit-self -Wpointer-arith -Wuninitialized -Winit-self -Wsuggest-override -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable -Wno-invalid-offsetof  -O3 -DNDEBUG    -Wl,--gc-sections  -rdynamic CMakeFiles/cmTC_193ab.dir/src.cxx.o  -o cmTC_193ab 
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+
+
+===== END =====
+
+Build output check failed:
+    Regex: 'unrecognized .*option'
+    Output line: 'cc1plus: warning: unrecognized command line option ‘-Wno-inconsistent-missing-override’'
+Compilation failed:
+    source file: '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx'
+    check option: ' -Wno-inconsistent-missing-override'
+===== BUILD LOG =====
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_3fc67/fast && /usr/bin/make -f CMakeFiles/cmTC_3fc67.dir/build.make CMakeFiles/cmTC_3fc67.dir/build
+make[1]: 进入目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+Building CXX object CMakeFiles/cmTC_3fc67.dir/src.cxx.o
+/usr/bin/aarch64-linux-gnu-g++    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Winit-self -Wpointer-arith -Wuninitialized -Winit-self -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable -Wno-invalid-offsetof -Wno-suggest-override  -O3 -DNDEBUG -fPIE    -Wno-inconsistent-missing-override -o CMakeFiles/cmTC_3fc67.dir/src.cxx.o -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx
+/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx:1: warning: ignoring #pragma   [-Wunknown-pragmas]
+    1 | #pragma
+      | 
+cc1plus: warning: unrecognized command line option ‘-Wno-inconsistent-missing-override’
+Linking CXX executable cmTC_3fc67
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3fc67.dir/link.txt --verbose=1
+/usr/bin/aarch64-linux-gnu-g++     -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Winit-self -Wpointer-arith -Wuninitialized -Winit-self -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -fvisibility-inlines-hidden -Wno-deprecated -Wno-missing-declarations -Wno-shadow -Wno-unused-parameter -Wno-unused-local-typedefs -Wno-sign-compare -Wno-sign-promo -Wno-undef -Wno-ignored-qualifiers -Wno-extra -Wno-unused-function -Wno-unused-const-variable -Wno-invalid-offsetof -Wno-suggest-override  -O3 -DNDEBUG    -Wl,--gc-sections  -rdynamic CMakeFiles/cmTC_3fc67.dir/src.cxx.o  -o cmTC_3fc67 
+make[1]: 离开目录“/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp”
+
+
+===== END =====
+
+Performing C++ SOURCE FILE Test CXX_HAS_MFPU_NEON failed with the following output:
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_40a15/fast && /usr/bin/make -f CMakeFiles/cmTC_40a15.dir/build.make CMakeFiles/cmTC_40a15.dir/build
+make[1]: Entering directory '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_40a15.dir/src.cxx.o
+/usr/bin/aarch64-linux-gnu-g++    -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wuninitialized -Winit-self -Wsuggest-override -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -fvisibility-inlines-hidden -funwind-tables -fweb -fwrapv -frename-registers -fsched2-use-superblocks -fsched2-use-traces -fsched-stalled-insns-dep=100 -fsched-stalled-insns=2 -DCXX_HAS_MFPU_NEON -O3 -DNDEBUG -fPIE   -mfpu=neon -o CMakeFiles/cmTC_40a15.dir/src.cxx.o -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.cxx
+aarch64-linux-gnu-g++: error: unrecognized command line option '-mfpu=neon'
+make[1]: *** [CMakeFiles/cmTC_40a15.dir/build.make:66: CMakeFiles/cmTC_40a15.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_40a15/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C SOURCE FILE Test C_HAS_MFPU_NEON failed with the following output:
+Change Dir: /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5b5e0/fast && /usr/bin/make -f CMakeFiles/cmTC_5b5e0.dir/build.make CMakeFiles/cmTC_5b5e0.dir/build
+make[1]: Entering directory '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5b5e0.dir/src.c.o
+/usr/bin/aarch64-linux-gnu-gcc   -fsigned-char -W -Wall -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wuninitialized -Winit-self -Wno-narrowing -Wno-comment -Wimplicit-fallthrough=3 -Wno-strict-overflow -fdiagnostics-show-option -pthread -fomit-frame-pointer -ffunction-sections -fdata-sections    -fvisibility=hidden -funwind-tables -fweb -fwrapv -frename-registers -fsched2-use-superblocks -fsched2-use-traces -fsched-stalled-insns-dep=100 -fsched-stalled-insns=2 -DC_HAS_MFPU_NEON -O3 -DNDEBUG -fPIE   -mfpu=neon -o CMakeFiles/cmTC_5b5e0.dir/src.c.o   -c /home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp/src.c
+aarch64-linux-gnu-gcc: error: unrecognized command line option '-mfpu=neon'
+make[1]: *** [CMakeFiles/cmTC_5b5e0.dir/build.make:66: CMakeFiles/cmTC_5b5e0.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/zw/嵌入式设计竞赛资料/项目代码及量化模型/demo/opencv_build_aarch64/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_5b5e0/fast] Error 2
+
+
+Source file was:
+int main(void) { return 0; }

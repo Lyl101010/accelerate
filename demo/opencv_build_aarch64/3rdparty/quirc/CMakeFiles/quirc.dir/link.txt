@@ -1,0 +1,2 @@
+/usr/bin/aarch64-linux-gnu-ar qc ../lib/libquirc.a  CMakeFiles/quirc.dir/src/decode.c.o CMakeFiles/quirc.dir/src/quirc.c.o CMakeFiles/quirc.dir/src/version_db.c.o
+/usr/bin/aarch64-linux-gnu-ranlib ../lib/libquirc.a

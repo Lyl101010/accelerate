@@ -1,0 +1,132 @@
+cmake_minimum_required(VERSION 3.15.1)
+
+# 解决 CMP0177 策略警告
+if(POLICY CMP0177)
+  cmake_policy(SET CMP0177 NEW)
+endif()
+
+# 声明 ENABLE_ASAN 变量
+option(ENABLE_ASAN "Enable AddressSanitizer" OFF)
+if(ENABLE_ASAN)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
+endif()
+
+project(demo)
+
+# 保持原有编译选项，不修改OpenCV相关配置
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c++11 -Wl,--allow-shlib-undefined")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wl,--allow-shlib-undefined")
+
+# 修复链接选项：将-Bsymbolic和-Wl选项分开设置
+# 避免合并写法导致ld无法识别
+add_link_options(
+    -Bsymbolic  # 直接传递给链接器的选项，无需-Wl前缀
+    -Wl,--allow-shlib-undefined
+    -Wl,--no-as-needed
+)
+
+# 设置目标架构
+set(TARGET_LIB_ARCH aarch64)
+
+# opencv（保持原有配置，确保图像功能正常）
+
+set(OpenCV_DIR ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/opencv-linux-aarch64/include/opencv2)
+find_package(OpenCV REQUIRED)
+
+# 解决zlib符号冲突
+find_package(ZLIB REQUIRED)
+if(ZLIB_FOUND)
+    include_directories(${ZLIB_INCLUDE_DIRS})
+endif()
+
+# rknn runtime
+set(RKNN_PATH ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/librknnrt)
+set(LIBRKNNRT ${RKNN_PATH}/Linux/librknn_api/aarch64/librknnrt.so)
+set(LIBRKNNRT_INCLUDES ${RKNN_PATH}/Linux/librkllm_api/include)
+
+# rkllm runtime
+set(RKLLM_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../rknn-llm-main/rkllm-runtime)
+set(LIBRKLLMRT ${RKLLM_PATH}/Linux/librkllm_api/aarch64/librkllmrt.so)
+set(LIBRKLLMRT_INCLUDES ${RKLLM_PATH}/Linux/librkllm_api/include)
+
+# 添加curl库依赖
+find_package(CURL REQUIRED)
+if(NOT CURL_FOUND)
+    message(FATAL_ERROR "libcurl not found, please install it first with: sudo apt install libcurl4-openssl-dev")
+endif()
+
+# 项目源文件路径
+set(rknpu_yolov8_file ${CMAKE_CURRENT_SOURCE_DIR}/src/rknpu2/yolov8.cc)
+
+# 添加send_info相关文件
+set(SEND_INFO_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/send_info.cpp
+)
+
+# 添加第三方库和工具
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/3rdparty 3rdparty.out)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/utils utils.out)
+
+set(CMAKE_INSTALL_RPATH "$ORIGIN/lib")
+
+# 查找线程库和数学库
+find_package(Threads REQUIRED)
+link_libraries(m)
+
+# 构建demo应用
+add_executable(demo 
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/image_enc.cc 
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/postprocess.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/border_event_analyzer.cpp
+    ${rknpu_yolov8_file}
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/yolov8_utils.cpp
+    ${SEND_INFO_FILES}
+)
+
+target_include_directories(demo PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils
+    ${LIBRKNNRT_INCLUDES}
+    ${LIBRKLLMRT_INCLUDES}
+    ${OpenCV_INCLUDE_DIRS}  # 保留OpenCV头文件
+    ${CURL_INCLUDE_DIRS}
+    ${ZLIB_INCLUDE_DIRS}
+)
+
+target_link_libraries(demo 
+    PRIVATE 
+    ${OpenCV_LIBS}  # 保留OpenCV链接，确保图像功能
+    ${LIBRKNNRT} 
+    ${LIBRKLLMRT}
+    ${CURL_LIBRARIES}
+    ${ZLIB_LIBRARIES}
+    fileutils
+    imagedrawing
+    m
+    Threads::Threads
+)
+
+# 修复目标链接选项格式
+set_target_properties(demo PROPERTIES 
+    LINK_FLAGS "-Wl,--no-undefined -Wl,--export-dynamic"
+)
+
+# 安装目录设置
+set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/install/demo_Linux_aarch64)
+
+# 安装目标和依赖
+install(TARGETS demo DESTINATION .)
+install(PROGRAMS ${LIBRKNNRT} ${LIBRKLLMRT} DESTINATION lib)
+if(CURL_LIBRARIES MATCHES ".so")
+    install(PROGRAMS ${CURL_LIBRARIES} DESTINATION lib)
+endif()
+if(ZLIB_LIBRARIES MATCHES ".so")
+    install(PROGRAMS ${ZLIB_LIBRARIES} DESTINATION lib)
+endif()
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/model/bus.jpg DESTINATION model)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/model/coco_80_labels_list.txt DESTINATION model)
+file(GLOB RKNN_FILES "${CMAKE_CURRENT_SOURCE_DIR}/model/*.rknn")
+install(FILES ${RKNN_FILES} DESTINATION model)
+install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/../data/demo.jpg DESTINATION .)

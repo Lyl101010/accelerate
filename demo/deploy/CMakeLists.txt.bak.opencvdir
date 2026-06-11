@@ -1,0 +1,151 @@
+cmake_minimum_required(VERSION 3.15.1)
+
+if(POLICY CMP0177)
+    cmake_policy(SET CMP0177 NEW)
+endif()
+
+project(demo)
+
+option(ENABLE_ASAN "Enable AddressSanitizer" OFF)
+if(ENABLE_ASAN)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=address")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
+endif()
+
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c++11 -Wl,--allow-shlib-undefined")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wl,--allow-shlib-undefined")
+
+add_link_options(
+    -Bsymbolic
+    -Wl,--allow-shlib-undefined
+    -Wl,--no-as-needed
+)
+
+set(TARGET_LIB_ARCH aarch64)
+
+# Link only the OpenCV modules used by the demo.  This avoids pulling in every
+# installed OpenCV module as a direct runtime dependency.
+find_package(OpenCV REQUIRED COMPONENTS core imgproc imgcodecs videoio highgui)
+find_package(ZLIB REQUIRED)
+find_package(CURL REQUIRED)
+find_package(Threads REQUIRED)
+
+if(ZLIB_FOUND)
+    include_directories(${ZLIB_INCLUDE_DIRS})
+endif()
+
+set(RKNN_PATH ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/librknnrt)
+set(LIBRKNNRT ${RKNN_PATH}/Linux/librknn_api/aarch64/librknnrt.so)
+set(LIBRKNNRT_INCLUDES ${RKNN_PATH}/Linux/librkllm_api/include)
+
+set(RKLLM_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../../rkllm-runtime)
+set(LIBRKLLMRT ${RKLLM_PATH}/Linux/librkllm_api/aarch64/librkllmrt.so)
+set(LIBRKLLMRT_INCLUDES ${RKLLM_PATH}/Linux/librkllm_api/include)
+
+set(rknpu_yolov8_file ${CMAKE_CURRENT_SOURCE_DIR}/src/rknpu2/yolov8.cc)
+
+set(SEND_INFO_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/send_info.cpp
+)
+
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/3rdparty 3rdparty.out)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/utils utils.out)
+
+set(CMAKE_INSTALL_RPATH "$ORIGIN/lib")
+link_libraries(m)
+
+add_executable(demo
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/image_enc.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/postprocess.cc
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/border_event_analyzer.cpp
+    ${rknpu_yolov8_file}
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/yolov8_utils.cpp
+    ${SEND_INFO_FILES}
+)
+
+target_include_directories(demo PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils
+    ${LIBRKNNRT_INCLUDES}
+    ${LIBRKLLMRT_INCLUDES}
+    ${OpenCV_INCLUDE_DIRS}
+    ${CURL_INCLUDE_DIRS}
+    ${ZLIB_INCLUDE_DIRS}
+)
+
+target_link_libraries(demo
+    PRIVATE
+    ${OpenCV_LIBS}
+    ${LIBRKNNRT}
+    ${LIBRKLLMRT}
+    ${CURL_LIBRARIES}
+    ${ZLIB_LIBRARIES}
+    fileutils
+    imagedrawing
+    m
+    Threads::Threads
+)
+
+set_target_properties(demo PROPERTIES
+    LINK_FLAGS "-Wl,--no-undefined -Wl,--export-dynamic"
+)
+
+if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+    set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/install/demo_Linux_aarch64 CACHE PATH "Install prefix" FORCE)
+endif()
+
+function(install_runtime_library_patterns)
+    foreach(_runtime_lib IN LISTS ARGN)
+        set(_runtime_path "")
+
+        if(TARGET "${_runtime_lib}")
+            get_target_property(_runtime_path "${_runtime_lib}" IMPORTED_LOCATION_RELEASE)
+            if(NOT _runtime_path)
+                get_target_property(_runtime_path "${_runtime_lib}" IMPORTED_LOCATION)
+            endif()
+        elseif(IS_ABSOLUTE "${_runtime_lib}")
+            set(_runtime_path "${_runtime_lib}")
+        endif()
+
+        if(NOT _runtime_path OR NOT EXISTS "${_runtime_path}")
+            continue()
+        endif()
+
+        get_filename_component(_runtime_name "${_runtime_path}" NAME)
+        if(NOT _runtime_name MATCHES "\\.so(\\.|$)")
+            continue()
+        endif()
+
+        get_filename_component(_runtime_dir "${_runtime_path}" DIRECTORY)
+        string(REGEX REPLACE "^(.*\\.so)(\\..*)?$" "\\1*" _runtime_pattern "${_runtime_name}")
+        install(
+            DIRECTORY "${_runtime_dir}/"
+            DESTINATION lib
+            FILES_MATCHING PATTERN "${_runtime_pattern}"
+        )
+    endforeach()
+endfunction()
+
+set(EXTRA_RUNTIME_LIBS ${OpenCV_LIBS} ${CURL_LIBRARIES} ${ZLIB_LIBRARIES})
+
+foreach(_gcc_runtime libstdc++.so.6 libgcc_s.so.1 libgomp.so.1)
+    execute_process(
+        COMMAND ${CMAKE_CXX_COMPILER} -print-file-name=${_gcc_runtime}
+        OUTPUT_VARIABLE _gcc_runtime_path
+        OUTPUT_STRIP_TRAILING_WHITESPACE
+    )
+    if(IS_ABSOLUTE "${_gcc_runtime_path}" AND EXISTS "${_gcc_runtime_path}")
+        list(APPEND EXTRA_RUNTIME_LIBS "${_gcc_runtime_path}")
+    endif()
+endforeach()
+
+install(TARGETS demo DESTINATION .)
+install(PROGRAMS ${LIBRKNNRT} ${LIBRKLLMRT} DESTINATION lib)
+install_runtime_library_patterns(${EXTRA_RUNTIME_LIBS})
+
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/model/bus.jpg DESTINATION model)
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/model/coco_80_labels_list.txt DESTINATION model)
+file(GLOB RKNN_FILES "${CMAKE_CURRENT_SOURCE_DIR}/model/*.rknn")
+install(FILES ${RKNN_FILES} DESTINATION model)
+install(PROGRAMS ${CMAKE_CURRENT_SOURCE_DIR}/../data/demo.jpg DESTINATION .)
