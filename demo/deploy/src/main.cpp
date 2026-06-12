@@ -539,7 +539,7 @@ int main()
                 continue;
             }
             
-            n_image_tokens = dart_select(img_vec, n_image_tokens, 1536, n_image_tokens / 4));
+            n_image_tokens = dart_select(img_vec, n_image_tokens, 1536, n_image_tokens / 4);
             
             
             cout << "图片拍摄成功，正在进行大模型分析..." << endl;
@@ -669,7 +669,7 @@ int main()
             } else {
                 cout << "新图片加载成功!" << endl;
             
-            n_image_tokens = dart_select(img_vec, n_image_tokens, 1536, n_image_tokens / 4));
+            n_image_tokens = dart_select(img_vec, n_image_tokens, 1536, n_image_tokens / 4);
             
                 
                 // --- BorderKG 集成开始 ---
