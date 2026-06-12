@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 by Rockchip Electronics Co., Ltd. All Rights Reserved.
+// Copyright (c) 2024 by Rockchip Electronics Co., Ltd. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -538,9 +538,9 @@ int main()
                 cerr << "处理拍摄的图片失败" << endl;
                 continue;
             }
-            n_image_tokens = saint_select(img_vec, n_image_tokens, 1536, n_image_tokens);
-            n_image_tokens = dart_select(img_vec, n_image_tokens, 1536, n_image_tokens * 2 / 3);
-            n_image_tokens = cdpruner_select(img_vec, n_image_tokens, 1536, n_image_tokens * 2 / 3);
+            
+            n_image_tokens = dart_select(img_vec, n_image_tokens, 1536, n_image_tokens / 4));
+            
             
             cout << "图片拍摄成功，正在进行大模型分析..." << endl;
             
@@ -668,9 +668,9 @@ int main()
                 cerr << "加载新图片失败，保留当前图片" << endl;
             } else {
                 cout << "新图片加载成功!" << endl;
-            n_image_tokens = saint_select(img_vec, n_image_tokens, 1536, n_image_tokens);
-            n_image_tokens = dart_select(img_vec, n_image_tokens, 1536, n_image_tokens * 2 / 3);
-            n_image_tokens = cdpruner_select(img_vec, n_image_tokens, 1536, n_image_tokens * 2 / 3);
+            
+            n_image_tokens = dart_select(img_vec, n_image_tokens, 1536, n_image_tokens / 4));
+            
                 
                 // --- BorderKG 集成开始 ---
                 string final_prompt = "<image>客观分析图中情况。";
