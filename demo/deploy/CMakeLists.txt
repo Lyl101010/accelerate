@@ -13,8 +13,8 @@ if(ENABLE_ASAN)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
 endif()
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wl,--allow-shlib-undefined")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wl,--allow-shlib-undefined")
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_link_options(
     -Bsymbolic
@@ -22,16 +22,39 @@ add_link_options(
     -Wl,--no-as-needed
 )
 
-set(TARGET_LIB_ARCH aarch64)
+# TARGET_LIB_ARCH is auto-detected by 3rdparty/CMakeLists.txt based on CMAKE_SIZEOF_VOID_P.
+# Default to aarch64 when not building through the 3rdparty subdirectory.
+if(NOT DEFINED TARGET_LIB_ARCH)
+    if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+        set(TARGET_LIB_ARCH aarch64)
+    else()
+        set(TARGET_LIB_ARCH armhf)
+    endif()
+endif()
 
 # Link only the OpenCV modules used by the demo.  This avoids pulling in every
 # installed OpenCV module as a direct runtime dependency.
 set(OpenCV_DIR "${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/opencv-linux-aarch64/share/OpenCV" CACHE PATH "OpenCV dir" FORCE)
 find_package(OpenCV REQUIRED COMPONENTS core imgproc imgcodecs videoio highgui)
-set(ZLIB_LIBRARY /usr/lib/aarch64-linux-gnu/libz.so CACHE FILEPATH "arm64 zlib library" FORCE)
+
+# ZLIB: prefer the aarch64 cross-compilation library when it exists
+set(_zlib_lib /usr/lib/aarch64-linux-gnu/libz.so)
+if(EXISTS "${_zlib_lib}")
+    set(ZLIB_LIBRARY "${_zlib_lib}" CACHE FILEPATH "arm64 zlib library" FORCE)
+else()
+    message(WARNING "aarch64 zlib not found at ${_zlib_lib}. Falling back to system zlib.")
+endif()
 find_package(ZLIB REQUIRED)
-set(CURL_INCLUDE_DIR /usr/include/aarch64-linux-gnu CACHE PATH "arm64 curl include" FORCE)
-set(CURL_LIBRARY /usr/lib/aarch64-linux-gnu/libcurl.so CACHE FILEPATH "arm64 curl library" FORCE)
+
+# CURL: prefer the aarch64 cross-compilation library when it exists
+set(_curl_include /usr/include/aarch64-linux-gnu)
+set(_curl_lib /usr/lib/aarch64-linux-gnu/libcurl.so)
+if(EXISTS "${_curl_include}" AND EXISTS "${_curl_lib}")
+    set(CURL_INCLUDE_DIR "${_curl_include}" CACHE PATH "arm64 curl include" FORCE)
+    set(CURL_LIBRARY "${_curl_lib}" CACHE FILEPATH "arm64 curl library" FORCE)
+else()
+    message(WARNING "aarch64 curl not found at ${_curl_lib}. Falling back to system curl.")
+endif()
 find_package(CURL REQUIRED)
 find_package(Threads REQUIRED)
 
@@ -49,12 +72,11 @@ set(LIBRKLLMRT_INCLUDES ${RKLLM_PATH}/Linux/librkllm_api/include)
 
 set(rknpu_yolov8_file ${CMAKE_CURRENT_SOURCE_DIR}/src/rknpu2/yolov8.cc)
 
-# ?????????
-# ?????src ???????????????????????????????# - sensing/input???????????????????????
-# - fusion??eaFusion ?????? RKNN ?????# - detection??OLOv8 RKNN ???????????
-# - reasoning/kg??QLite ??????????????????
-# - telemetry/transport??PS ??????????#
-# ?????????????????????????? src/kg??? postprocess.cc ?????# ??? CMake ??????????????src ???????????????????set(DEMO_SOURCE_FILES
+# - fusion/EaFusion: RKNN inference + border KG
+# - detection: YOLOv8 RKNN inference + postprocess
+# - reasoning/kg: SQLite border knowledge graph
+# - telemetry/transport: MQTT send_info
+set(DEMO_SOURCE_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/image_enc.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/runtime_config.cpp
@@ -150,12 +172,9 @@ function(install_runtime_library_patterns)
     endforeach()
 endfunction()
 
-# ???????????# - demo ????????????????? libcurl??end_info ??????????????????
-# - ??????????????? libcurl.so* ??? install/lib??#
-# ?????# ????????? libcurl ?????????????????libldap_r-2.4.so.2??# ??? Ubuntu 22.04 ???????????????? demo ?????$ORIGIN/lib??# ????install/lib ?????? libcurl.so.4????????????????????# ???????????? main() ?????? libldap_r-2.4.so.2??#
-# ????????????????????libcurl4?????????????????????
-# ??? CMake ??????????? -DDEMO_BUNDLE_LIBCURL=ON?????????
-# libcurl ?????????????set(EXTRA_RUNTIME_LIBS ${OpenCV_LIBS} ${ZLIB_LIBRARIES})
+# -- Bundle runtime shared libraries (e.g. libcurl.so*) into install/lib --
+# libcurl is conditionally appended via DEMO_BUNDLE_LIBCURL option
+set(EXTRA_RUNTIME_LIBS ${OpenCV_LIBS} ${ZLIB_LIBRARIES})
 if(DEMO_BUNDLE_LIBCURL)
     list(APPEND EXTRA_RUNTIME_LIBS ${CURL_LIBRARIES})
 endif()
@@ -172,7 +191,7 @@ foreach(_gcc_runtime libstdc++.so.6 libgcc_s.so.1 libgomp.so.1)
 endforeach()
 
 install(TARGETS demo DESTINATION .)
-install(PROGRAMS ${LIBRKNNRT} ${LIBRKLLMRT} DESTINATION lib)
+install(FILES ${LIBRKNNRT} ${LIBRKLLMRT} DESTINATION lib)
 install_runtime_library_patterns(${EXTRA_RUNTIME_LIBS})
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/model/bus.jpg DESTINATION model)
